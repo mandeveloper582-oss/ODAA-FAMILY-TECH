@@ -1,4 +1,4 @@
- const BASE_URL = "http://localhost:5000";
+ const BASE_URL = "https://odaa-family-tech.onrender.com";
 
 console.log("Frontend loaded 🚀");
 
