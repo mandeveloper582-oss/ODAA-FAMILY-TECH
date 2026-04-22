@@ -1,0 +1,271 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',sans-serif;
+}
+
+html, body{
+  height:100%;
+}
+
+body{
+  display:flex;
+  flex-direction:column;
+  background:#f0f2f5;
+  color:#050505;
+  transition:0.3s;
+  overflow-x:hidden;
+}
+
+body.dark{
+  background:#18191a;
+  color:#e4e6eb;
+
+}
+
+/* ===== HEADER ===== */
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 14px;
+  background:linear-gradient(45deg,#1877f2,#0d5ddf);
+  color:white;
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:1000;
+}
+
+.logo{
+  font-weight:bold;
+  font-size:18px;
+}
+
+.header-actions button{
+  margin-left:8px;
+  font-size:16px;
+  background:rgba(255,255,255,0.2);
+  border:none;
+  padding:6px 10px;
+  border-radius:8px;
+}
+.header-right button {
+  display:flex;
+  align-items:center;
+  gap:8;}
+.header-right button {
+  font-size:16px;
+  background:rgba(255,255,255,0.2);
+  border:none;
+  padding:6px 10px;
+  border-radius:8px;
+  cursor:pointer;
+}
+  
+
+/* ===== MAIN ===== */
+main{
+  flex:1;
+  margin-top:60px;
+}
+.overlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.5);
+  opacity:0;
+  transition:0.3s;
+  z-index:998;
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  
+}
+
+/* show overlay */
+.overlay.active{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+}
+
+
+/* ===== DRAWER ===== */
+.drawer{
+  position:fixed;
+  left:-260px;
+  top:0;
+  width:250px;
+  height:100%;
+  background:white;
+  padding:20px;
+  transition:0.3s;
+  z-index:999;
+}
+
+.drawer.open{
+  left:0;
+}
+
+body.dark .drawer{
+  background:#242526;
+}
+
+.drawer a{
+  display:block;
+  margin:12px 0;
+  padding:10px;
+  border-radius:8px;
+}
+
+/* ===== FEED ===== */
+.feed{
+  max-width:650px;
+  margin:auto;
+  padding:15px;
+  margin-top:10px;
+}
+
+/* ===== CARD ===== */
+.card{
+  background:white;
+  padding:14px;
+  border-radius:12px;
+  margin-bottom:15px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+body.dark .card{
+  background:#242526;
+}
+
+/* ===== BUTTON ===== */
+button{
+  background:#1877f2;
+  color:white;
+  border:none;
+  padding:8px 12px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+/* ===== MEDIA ===== */
+#media img,#media video{
+  width:100%;
+  border-radius:10px;
+  margin-top:10px;
+}
+
+/* ===== COMMENT ===== */
+.comment{
+  background:#e4e6eb;
+  padding:8px;
+  margin-top:5px;
+  border-radius:6px;
+}
+
+body.dark .comment{
+  background:#3a3b3c;
+}
+
+/* ===== FORM ===== */
+input,textarea{
+  width:100%;
+  padding:8px;
+  margin-top:6px;
+  border-radius:6px;
+  border:1px solid #ccc;
+}
+
+/* ===== SECTION ===== */
+.section{
+  padding:15px;
+  max-width:650px;
+  margin:auto;
+}
+
+.hidden{
+  display:none;
+}
+
+/* ===== FOOTER (FIXED DOWN) ===== */
+.footer{
+  background:#111;
+  color:#fff;
+  padding:20px 10px;
+  margin-top:auto;   /* 🔥 IMPORTANT */
+}
+
+.footer-container{
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:20px;
+}
+
+.footer-bottom{
+  text-align:center;
+  margin-top:15px;
+  font-size:13px;
+}
+
+/* ===== MOBILE FIX ===== */
+@media(max-width:768px){
+
+  .header{
+    padding:8px 10px;
+  }
+
+  .logo{
+    font-size:15px;
+  }
+  .foter{
+    padding:8px 10px;
+    font-size:12px;
+  }
+  .footer-bottom{
+    font-size:11px;
+    margin-top:18px;
+  }
+    
+.footer-container{
+  gap:10px;
+}
+  
+  .header-right button {
+    padding:6px 8px;
+    font-size:14px;
+  
+
+  main{
+    margin-top:55px;
+  }
+
+  .drawer{
+    width:200px;
+    left:-200px;   /* 🔥 FIX (hin banamne) */
+  }
+
+  .feed{
+    padding:10px;
+  }
+
+  .card{
+    padding:12px;
+  }
+
+  button{
+    width:100%;
+  }
+
+  .footer-container{
+    flex-direction:column;
+    text-align:center;
+  }
+}
+
+
